@@ -11,7 +11,6 @@ import (
 	"github.com/gdamore/tcell/v2"
 	"github.com/google/uuid"
 	"github.com/rivo/tview"
-	"golang.design/x/clipboard"
 )
 
 type ResultsTableState struct {
@@ -484,19 +483,19 @@ func (table *ResultsTable) tableInputCapture(event *tcell.EventKey) *tcell.Event
 			table.Pagination.SetOffset(0)
 			table.SetSortedBy(currentColumnName, "ASC")
 		} else if rune == 'y' {
-			selectedCell := table.GetCell(selectedRowIndex, selectedColumnIndex)
+			// selectedCell := table.GetCell(selectedRowIndex, selectedColumnIndex)
 
-			if selectedCell != nil {
-				err := clipboard.Init()
+			// if selectedCell != nil {
+			// 	err := clipboard.Init()
 
-				if err == nil {
-					text := []byte(selectedCell.Text)
+			// 	if err == nil {
+			// 		text := []byte(selectedCell.Text)
 
-					if text != nil {
-						clipboard.Write(clipboard.FmtText, text)
-					}
-				}
-			}
+			// 		if text != nil {
+			// 			clipboard.Write(clipboard.FmtText, text)
+			// 		}
+			// 	}
+			// }
 		}
 	}
 
