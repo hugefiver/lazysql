@@ -162,7 +162,7 @@ func (form *ConnectionForm) testConnection(connectionString string) {
 		db = &drivers.MySQL{}
 	case "postgres":
 		db = &drivers.Postgres{}
-	case "sqlite3":
+	case "sqlite":
 		db = &drivers.SQLite{}
 	}
 

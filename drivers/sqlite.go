@@ -21,7 +21,7 @@ func (db *SQLite) TestConnection(urlstr string) (err error) {
 }
 
 func (db *SQLite) Connect(urlstr string) (err error) {
-	db.SetProvider("sqlite3")
+	db.SetProvider("sqlite")
 
 	db.Connection, err = dburl.Open(urlstr)
 

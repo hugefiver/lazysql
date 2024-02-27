@@ -94,7 +94,7 @@ func NewTree(dbName string, dbdriver drivers.Driver) *Tree {
 			if node.GetChildren() == nil {
 				tableName := fmt.Sprintf("%s.%s", node.GetReference(), node.GetText())
 
-				if tree.DBDriver.GetProvider() == "sqlite3" {
+				if tree.DBDriver.GetProvider() == "sqlite" {
 					tableName = node.GetText()
 				}
 
@@ -105,7 +105,7 @@ func NewTree(dbName string, dbdriver drivers.Driver) *Tree {
 		} else if node.GetLevel() == 3 {
 			tableName := fmt.Sprintf("%s.%s", node.GetReference(), node.GetText())
 
-			if tree.DBDriver.GetProvider() == "sqlite3" {
+			if tree.DBDriver.GetProvider() == "sqlite" {
 				tableName = node.GetText()
 			}
 

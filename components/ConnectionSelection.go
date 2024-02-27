@@ -140,7 +140,7 @@ func (cs *ConnectionSelection) Connect(connection models.Connection) {
 			newDbDriver = &drivers.MySQL{}
 		case "postgres":
 			newDbDriver = &drivers.Postgres{}
-		case "sqlite3":
+		case "sqlite":
 			newDbDriver = &drivers.SQLite{}
 		}
 
